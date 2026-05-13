@@ -1,6 +1,6 @@
 # Kraken OHLCVT Backend API
 
-A beginner-friendly backend application built with FastAPI and PostgreSQL for storing and fetching OHLCVT crypto market data.
+A backend application built with FastAPI and PostgreSQL for storing and fetching OHLCVT crypto market data.
 
 ---
 
