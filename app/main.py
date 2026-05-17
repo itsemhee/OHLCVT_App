@@ -4,7 +4,7 @@ from app.database import SessionLocal, engine, get_db
 from app.models import Base, OHLCVT, User
 from app.schemas import OHLCVTCreate, UserCreate
 from app.utils import verify, hash
-from oauth2 import create_access_token, verify_access_token, get_current_user
+from app.oauth2 import create_access_token, verify_access_token, get_current_user
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 
 app = FastAPI()

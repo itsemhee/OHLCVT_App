@@ -5,7 +5,7 @@ from datetime import datetime, timedelta, timezone
 from . import schemas, database, models
 from fastapi import FastAPI, Response, status, HTTPException, Depends
 from sqlalchemy.orm import Session
-from config import settings
+from app.config import settings
 
 OAuth2_scheme = OAuth2PasswordBearer(tokenUrl='login')
 
