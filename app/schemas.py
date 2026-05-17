@@ -9,3 +9,8 @@ class OHLCVTCreate(BaseModel):
     close: float
     volume: float
     trades: int
+
+class UserCreate(BaseModel):
+    username: str
+    password: str
+        

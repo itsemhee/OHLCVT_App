@@ -1,18 +1,11 @@
 from sqlalchemy import create_engine
-from dotenv import load_dotenv
 from sqlalchemy.orm import sessionmaker, declarative_base
-import os
 
-load_dotenv()
+from config import settings
 
-DB_USER = os.getenv("DB_USER")
-DB_PASSWORD = os.getenv("DB_PASSWORD")
-DB_HOST= os.getenv("DB_HOST")
-DB_PORT = os.getenv("DB_PORT")
-DB_NAME= os.getenv("DB_NAME")
 
 SQLALCHEMY_DATABASE_URL = (
-    f"postgresql+psycopg2://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
+    f"postgresql+psycopg2://{settings.DB_USER}:{settings.DB_PASSWORD}@{settings.DB_HOST}:{settings.DB_PORT}/{settings.DB_NAME}"
     )
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
@@ -24,3 +17,10 @@ SessionLocal = sessionmaker(
 )
 
 Base = declarative_base()
+
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
