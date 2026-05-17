@@ -26,7 +26,7 @@ def login_user(user: UserCreate, db: Session =Depends(get_db),
 
     return new_user
 
-@app.get("/{id}")
+@app.get("/users/{id}")
 def get_user(id: int, db: Session= Depends(get_db)):
 
     user = db.query(User).filter(User.id == id).first()
