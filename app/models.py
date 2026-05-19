@@ -1,4 +1,6 @@
-from sqlalchemy import Column, DateTime, Integer, BigInteger, Double, String, TIMESTAMP, 
+from sqlalchemy import Column, DateTime, Integer, BigInteger, Double, String
+from sqlalchemy.sql.expression import text
+from sqlalchemy.sql.sqltypes import TIMESTAMP
 from app.database import Base
 
 class OHLCVT (Base):
