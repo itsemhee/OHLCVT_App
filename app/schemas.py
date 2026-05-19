@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, EmailStr
 from datetime import datetime
 
 class OHLCVTCreate(BaseModel):
@@ -13,4 +13,5 @@ class OHLCVTCreate(BaseModel):
 class UserCreate(BaseModel):
     username: str
     password: str
-        
+    email: EmailStr
+    created_at: datetime
