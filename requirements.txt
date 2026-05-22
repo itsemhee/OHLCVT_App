@@ -9,3 +9,4 @@ pydantic-settings
 email-validator
 pwdlib[argon2]
 pyjwt[cryptography]
+python-multipart
